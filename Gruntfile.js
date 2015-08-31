@@ -225,8 +225,8 @@ module.exports = function (grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= yeoman.dist %>/scripts/angular-form-validation.min.js': [
-            '<%= yeoman.dist %>/scripts/angular-form-validation.js'
+          '<%= yeoman.dist %>/scripts/form-validation.min.js': [
+            '<%= yeoman.dist %>/scripts/form-validation.js'
           ],
           '<%= yeoman.dist %>/scripts/vendor.min.js': [
             '<%= yeoman.dist %>/scripts/vendor.js'
