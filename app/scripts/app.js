@@ -9,7 +9,43 @@
  * Main module of the application.
  */
 (function(){
-	angular.module('formValidation',[]);
+	var _errorCodeProvider=function() {
+	  var _url,_map;
+	  _map={};
+	  this.setErrorCodeUrl=function(url){
+		  _url=url;
+	  }
+	  function init(data){
+		  if(data){
+		  	_map=data;
+		  }
+	  }
+	  this.$get = ['$http','$log','$q',function ErrorCodeSerivce($http,$log,$q) {
+		  var _service,def;
+		  def=$q.defer();
+		  _service={};
+		  
+		  if(_url){
+			  $http.get(_url).then(function (response) {
+				  init(response.data);
+				  def.resolve(_map);
+			  },function(resp){
+				  def.reslove(_map);
+				  $log.error('error while loading error codes',resp);
+			  });  
+		  }else{
+			  def.resolve(_map);
+		  }
+		  _service.initMessage=function(msgObj){
+			  def.promise.then(function(map){
+				  if(!msgObj.message){
+						msgObj.message=(map[msgObj.code])?map[msgObj.code]:msgObj.code;
+				  }
+			  });
+		  };
+		  return _service;
+	  }];
+	}
 	var _validationMessageDirective=['$log',function($log){
 		function _defaultMessage(){
 			return {
@@ -32,7 +68,7 @@
 			}
 		}
 	}];
-	var _formValidationDirective=['$log','$timeout',function($log,$timeout){
+	var _formValidationDirective=['$log','$timeout','errorCode',function($log,$timeout,errorCode){
 		return {
 			restrict: 'A',
 			require:['form','formValidation'],
@@ -43,6 +79,7 @@
 					_form_name=name;
 				}
 				this.addValidationMessage=function(msgObj){
+					errorCode.initMessage(msgObj);
 					_validationMessages.push(msgObj);
 				}
 				this.getValidationMessage=function(){
@@ -55,7 +92,7 @@
 						 if(errors[validationName]){
 							 for(var a=0;a<errors[validationName].length;a++){
 								 if(errors[validationName][a].$name==_validationMessages[k].field){
-									 formValidations.push((_validationMessages[k].code)?_validationMessages[k].code:_validationMessages[k].message);
+									 formValidations.push(_validationMessages[k].message);
 									 if(!multiple){
 										 return formValidations;
 									 }
@@ -145,7 +182,9 @@
 			}
 		}
 	}];
+	angular.module('formValidation',[]);
+	angular.module('formValidation').provider('errorCode',_errorCodeProvider);
 	angular.module('formValidation').directive('validationMessage',_validationMessageDirective);
 	angular.module('formValidation').directive('formValidation',_formValidationDirective);
 	angular.module('formValidation').directive('formError',_formErrorDirective);
-})()
+})();
