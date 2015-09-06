@@ -28,11 +28,98 @@
 <h1>
 <a id="directives" class="anchor" href="#directives" aria-hidden="true"><span class="octicon octicon-link"></span></a>Directives</h1>
 
-<ul>
-<li><p><code>form-validation</code> : This can be used with form tag. It initiates the form validations and show the validation messages on form submit if validation fails</p></li>
-<li><p><code>validation-message</code> : This can be used to register a field with validation and validation message/code</p></li>
-<li><p><code>form-error</code> : This can be used to show validation message, act as a placeholder in DOM, can be placed inside form or outside form.</p></li>
-</ul>
+<blockquote>
+<p><code>form-validation</code> : This can be used with form tag. It initiates the form validations and show the validation messages on form submit if validation fails</p>
+
+<hr>
+
+<p><code>validation-message</code> : This can be used to register a field with validation and validation message/code</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>field</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">name of the form field</td>
+</tr>
+<tr>
+<td align="left"><code>validation</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">name of validation</td>
+</tr>
+<tr>
+<td align="left"><code>message</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">message which needs to be on validation failure</td>
+</tr>
+<tr>
+<td align="left"><code>code</code></td>
+<td align="left">
+<code>string</code>(optional)</td>
+<td align="left">error code which will be resolved by error code provider to show message</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<blockquote>
+<p><code>form-error</code> : This can be used to show validation message, act as a placeholder in DOM, can be placed inside form or outside form.</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th align="left">Property</th>
+<th align="center">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>name</code></td>
+<td align="center">
+<code>string</code>(optinal)</td>
+<td align="left">name of the form if directive is placed outside the form tag</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h1>
+<a id="provider" class="anchor" href="#provider" aria-hidden="true"><span class="octicon octicon-link"></span></a>Provider</h1>
+
+<blockquote>
+<p><code>errorCodeProvider</code> : used to configure the error code</p>
+</blockquote>
+
+<table>
+<thead>
+<tr>
+<th align="left">Function</th>
+<th align="center">Paramter</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><code>setErrorCodeUrl</code></td>
+<td align="center"><code>string</code></td>
+<td align="left">url to get error code from server-side</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
 
 <h1>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
