@@ -7,3 +7,4 @@ This plugin can be used to show validation message.
 * `validation-message` : This can be used to register a field with validation and validation message/code
 * `form-error` : This can be used to show validation message, act as a placeholder in DOM, can be placed inside form or outside form.
 
+### For Docs & Example [Click me](http://kuldeepkeshwar.github.io/angular-form-validation)
