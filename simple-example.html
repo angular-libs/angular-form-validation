@@ -1,0 +1,85 @@
+<html>
+<head>
+<link rel="stylesheet" href="../dist/styles/vendor.css" />
+
+<script src="../dist/scripts/vendor.min.js"></script>
+<script src="../dist/scripts/form-validation.min.js"></script>
+<script src="../examples/simple-example.js"></script>
+<style>
+.sign-in-container {
+	margin-top: 50px
+}
+
+#signinbox #forgot-password-link {
+	float: right;
+	font-size: 85%;
+	position: relative;
+	top: -10px
+}
+
+#signinbox .panel-body {
+	padding-top: 30px
+}
+
+#signinbox .panel-body .form-field {
+	margin-bottom: 25px
+}
+
+#signinbox .btn-container {
+	margin-top: 10px
+}
+#signinbox .btn-container button{
+    margin-right: 6px;
+}
+#signinbox .sign-up-link {
+	border-top: 1px solid #888;
+	padding-top: 15px;
+	font-size: 85%
+}
+
+#signinbox .error-container {
+	margin-left: 1px;
+	margin-right: 1px;
+}
+</style>   
+</head>
+<body ng-app="testApp">
+	<div id="signinbox" class="container">    
+	     <div class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 sign-in-container">                    
+	         <div class="panel panel-info" >
+	                 <div class="panel-heading">
+	                     <div class="panel-title">Sign In</div>
+	                 </div>     
+	                 <div class="panel-body" >
+	                     <form name="testForm" form-validation="true" class="form-horizontal" role="form" action="#" novalidate>
+	                     	<form-error></form-error>
+	                     	<div class="input-group form-field">
+	                              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+	                              <input type="email" name="email" ng-model="email" class="form-control" placeholder="Email address" required  email autofocus="true"/>  
+	                              <validation-message field="email" validation="required" message="Email can't be empty"></validation-message>
+	                         	  <validation-message field="email" validation="email" message="Invalid email"></validation-message>
+	                         </div>
+	                         <div class="input-group form-field">
+	                              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+	                              <input type="password" name="passkey" ng-model="passkey" class="form-control" placeholder="Password" required="true" autofocus="true"/>
+	                         	<validation-message field="passkey" validation="required" code="Password can't be empty"></validation-message>
+	                         </div>
+							 <div class="input-group">
+	                            <div class="checkbox">
+	                              <label>
+	                                <input id="login-remember" type="checkbox" name="remember" value="1"> Remember me
+	                              </label>
+	                            </div>
+	                          </div>
+							 <div class="form-group btn-container">
+	                            <div class="col-sm-12 controls">
+	                              <button class="btn btn-success" type="submit">Login  </button>
+	                            </div>
+	                         </div>    
+	                     </form>
+					</div>
+				</div>  
+		</div>
+	</div>
+</body>
+</html>

@@ -11,7 +11,7 @@
   </head>
   <body>
     <section class="page-header">
-      <h1 class="project-name">Angular-form-validation</h1>
+      <h1 class="project-name">Angular Form Validation</h1>
       <h2 class="project-tagline">angular form validation</h2>
       <a href="https://github.com/kuldeepkeshwar/angular-form-validation" class="btn">View on GitHub</a>
       <a href="https://github.com/kuldeepkeshwar/angular-form-validation/zipball/master" class="btn">Download .zip</a>
@@ -29,45 +29,54 @@
 <a id="directives" class="anchor" href="#directives" aria-hidden="true"><span class="octicon octicon-link"></span></a>Directives</h1>
 
 <blockquote>
-<p><code>form-validation</code> : This can be used with form tag. It initiates the form validations and show the validation messages on form submit if validation fails</p>
-
+  <p>
+      <code>form-validation</code> <span>:</span> 
+      <span>This can be used with form tag. It initiates the form validations and show the validation messages on form submit if validation fails</span>
+  </p>
+</blockquote>
 <hr>
-
-<p><code>validation-message</code> : This can be used to register a field with validation and validation message/code</p>
+<blockquote>
+<p>
+    <code>validation-message</code> : 
+    <div>
+      <span>This can be used to register a field with validation and validation message/code</span>
+      <table>
+      <thead>
+      <tr>
+      <th align="left">Property</th>
+      <th align="left">Type</th>
+      <th align="left">Description</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td align="left"><code>field</code></td>
+      <td align="left"><code>string</code></td>
+      <td align="left">name of the form field</td>
+      </tr>
+      <tr>
+      <td align="left"><code>validation</code></td>
+      <td align="left"><code>string</code></td>
+      <td align="left">name of validation</td>
+      </tr>
+      <tr>
+      <td align="left"><code>message</code></td>
+      <td align="left"><code>string</code></td>
+      <td align="left">message which needs to be on validation failure</td>
+      </tr>
+      <tr>
+      <td align="left"><code>code</code></td>
+      <td align="left">
+      <code>string</code>(optional)</td>
+      <td align="left">error code which will be resolved by error code provider to show message</td>
+      </tr>
+      </tbody>
+      </table>
+    </div>
+</p>
 </blockquote>
 
-<table>
-<thead>
-<tr>
-<th align="left">Property</th>
-<th align="left">Type</th>
-<th align="left">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left"><code>field</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">name of the form field</td>
-</tr>
-<tr>
-<td align="left"><code>validation</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">name of validation</td>
-</tr>
-<tr>
-<td align="left"><code>message</code></td>
-<td align="left"><code>string</code></td>
-<td align="left">message which needs to be on validation failure</td>
-</tr>
-<tr>
-<td align="left"><code>code</code></td>
-<td align="left">
-<code>string</code>(optional)</td>
-<td align="left">error code which will be resolved by error code provider to show message</td>
-</tr>
-</tbody>
-</table>
+
 
 <hr>
 
@@ -139,7 +148,7 @@
     &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input-group form-field<span class="pl-pds">"</span></span>&gt;
         &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input-group-addon<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">i</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>glyphicon glyphicon-lock<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">i</span>&gt;&lt;/<span class="pl-ent">span</span>&gt;
         &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>passkey<span class="pl-pds">"</span></span> <span class="pl-e">ng-model</span>=<span class="pl-s"><span class="pl-pds">"</span>passkey<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>form-control<span class="pl-pds">"</span></span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>Password<span class="pl-pds">"</span></span> <span class="pl-e">required</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>/&gt;
-        &lt;<span class="pl-ent">validation</span><span class="pl-e">-message</span> <span class="pl-e">field</span>=<span class="pl-s"><span class="pl-pds">"</span>passkey<span class="pl-pds">"</span></span> <span class="pl-e">validation</span>=<span class="pl-s"><span class="pl-pds">"</span>required<span class="pl-pds">"</span></span> <span class="pl-e">code</span>=<span class="pl-s"><span class="pl-pds">"</span>Password can't be empty<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">validation</span><span class="pl-e">-message</span>&gt;
+        &lt;<span class="pl-ent">validation</span><span class="pl-e">-message</span> <span class="pl-e">field</span>=<span class="pl-s"><span class="pl-pds">"</span>passkey<span class="pl-pds">"</span></span> <span class="pl-e">validation</span>=<span class="pl-s"><span class="pl-pds">"</span>required<span class="pl-pds">"</span></span> <span class="pl-e">message</span>=<span class="pl-s"><span class="pl-pds">"</span>Password can't be empty<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">validation</span><span class="pl-e">-message</span>&gt;
     &lt;/<span class="pl-ent">div</span>&gt;
     &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>form-group btn-container<span class="pl-pds">"</span></span>&gt;
         &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-sm-12 controls<span class="pl-pds">"</span></span>&gt;
