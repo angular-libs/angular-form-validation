@@ -22,19 +22,50 @@
       <h1>
 <a id="angular-form-validation" class="anchor" href="#angular-form-validation" aria-hidden="true"><span class="octicon octicon-link"></span></a>angular-form-validation</h1>
 
-<p>This plugin can be used to show validation message.</p>
+<h5>
+<a id="this-plugin-can-be-used-to-show-validation-message" class="anchor" href="#this-plugin-can-be-used-to-show-validation-message" aria-hidden="true"><span class="octicon octicon-link"></span></a>This plugin can be used to show validation message.</h5>
 
-<h2>
-<a id="directives" class="anchor" href="#directives" aria-hidden="true"><span class="octicon octicon-link"></span></a>Directives</h2>
+<h1>
+<a id="directives" class="anchor" href="#directives" aria-hidden="true"><span class="octicon octicon-link"></span></a>Directives</h1>
 
 <ul>
-<li>
-<code>form-validation</code> : This can be used with form tag. It initiate the form validations and show the validation messages on form submit if validation fails</li>
-<li>
-<code>validation-message</code> : This can be used to register a field with validation and validation message/code</li>
-<li>
-<code>form-error</code> : This can be used to show validation message, act as a placeholder in DOM, can be placed inside form or outside form.</li>
+<li><p><code>form-validation</code> : This can be used with form tag. It initiates the form validations and show the validation messages on form submit if validation fails</p></li>
+<li><p><code>validation-message</code> : This can be used to register a field with validation and validation message/code</p></li>
+<li><p><code>form-error</code> : This can be used to show validation message, act as a placeholder in DOM, can be placed inside form or outside form.</p></li>
 </ul>
+
+<h1>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h1>
+
+<ul>
+<li><em>HTML</em></li>
+</ul>
+
+<div class="highlight highlight-html"><pre>&lt;<span class="pl-ent">form</span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>testForm<span class="pl-pds">"</span></span> <span class="pl-e">form-validation</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>form-horizontal<span class="pl-pds">"</span></span> <span class="pl-e">action</span>=<span class="pl-s"><span class="pl-pds">"</span>#<span class="pl-pds">"</span></span> <span class="pl-e">novalidate</span>&gt;
+    &lt;<span class="pl-ent">form</span><span class="pl-e">-error</span>&gt;&lt;/<span class="pl-ent">form</span><span class="pl-e">-error</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input-group form-field<span class="pl-pds">"</span></span>&gt;
+         &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input-group-addon<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">i</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>glyphicon glyphicon-user<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">i</span>&gt;&lt;/<span class="pl-ent">span</span>&gt;
+         &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class="pl-e">ng-model</span>=<span class="pl-s"><span class="pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>form-control<span class="pl-pds">"</span></span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>Email address<span class="pl-pds">"</span></span> <span class="pl-e">required</span>  <span class="pl-e">email</span> /&gt;  
+         &lt;<span class="pl-ent">validation</span><span class="pl-e">-message</span> <span class="pl-e">field</span>=<span class="pl-s"><span class="pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class="pl-e">validation</span>=<span class="pl-s"><span class="pl-pds">"</span>required<span class="pl-pds">"</span></span> <span class="pl-e">message</span>=<span class="pl-s"><span class="pl-pds">"</span>Email can't be empty<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">validation</span><span class="pl-e">-message</span>&gt;
+        &lt;<span class="pl-ent">validation</span><span class="pl-e">-message</span> <span class="pl-e">field</span>=<span class="pl-s"><span class="pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class="pl-e">validation</span>=<span class="pl-s"><span class="pl-pds">"</span>email<span class="pl-pds">"</span></span> <span class="pl-e">message</span>=<span class="pl-s"><span class="pl-pds">"</span>Invalid email<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">validation</span><span class="pl-e">-message</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input-group form-field<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">span</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>input-group-addon<span class="pl-pds">"</span></span>&gt;&lt;<span class="pl-ent">i</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>glyphicon glyphicon-lock<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">i</span>&gt;&lt;/<span class="pl-ent">span</span>&gt;
+        &lt;<span class="pl-ent">input</span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span> <span class="pl-e">name</span>=<span class="pl-s"><span class="pl-pds">"</span>passkey<span class="pl-pds">"</span></span> <span class="pl-e">ng-model</span>=<span class="pl-s"><span class="pl-pds">"</span>passkey<span class="pl-pds">"</span></span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>form-control<span class="pl-pds">"</span></span> <span class="pl-e">placeholder</span>=<span class="pl-s"><span class="pl-pds">"</span>Password<span class="pl-pds">"</span></span> <span class="pl-e">required</span>=<span class="pl-s"><span class="pl-pds">"</span>true<span class="pl-pds">"</span></span>/&gt;
+        &lt;<span class="pl-ent">validation</span><span class="pl-e">-message</span> <span class="pl-e">field</span>=<span class="pl-s"><span class="pl-pds">"</span>passkey<span class="pl-pds">"</span></span> <span class="pl-e">validation</span>=<span class="pl-s"><span class="pl-pds">"</span>required<span class="pl-pds">"</span></span> <span class="pl-e">code</span>=<span class="pl-s"><span class="pl-pds">"</span>Password can't be empty<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">validation</span><span class="pl-e">-message</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>form-group btn-container<span class="pl-pds">"</span></span>&gt;
+        &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-sm-12 controls<span class="pl-pds">"</span></span>&gt;
+            &lt;<span class="pl-ent">button</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>btn btn-success<span class="pl-pds">"</span></span> <span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>submit<span class="pl-pds">"</span></span>&gt;Login&lt;/<span class="pl-ent">button</span>&gt;
+        &lt;/<span class="pl-ent">div</span>&gt;
+    &lt;/<span class="pl-ent">div</span>&gt;
+&lt;/<span class="pl-ent">form</span>&gt;</pre></div>
+
+<ul>
+<li><em>Code</em></li>
+</ul>
+
+<div class="highlight highlight-javascript"><pre>angular.module(<span class="pl-s"><span class="pl-pds">'</span>testApp<span class="pl-pds">'</span></span>,[<span class="pl-s"><span class="pl-pds">'</span>formValidation<span class="pl-pds">'</span></span>]);</pre></div>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/kuldeepkeshwar/angular-form-validation">Angular-form-validation</a> is maintained by <a href="https://github.com/kuldeepkeshwar">kuldeepkeshwar</a>.</span>
