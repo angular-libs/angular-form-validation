@@ -1,11 +1,11 @@
 {
-  "name": "form-validation",
-  "version": "0.0.0",
+  "name": "ng-form-validation",
+  "version": "1.0.1",
   "dependencies": {
     "angular": "^1.3.0",
     "bootstrap": "^3.2.0"
   },
-  "main":"dist/scripts/form-validation.js",
+  "main": "dist/scripts/form-validation.js",
   "devDependencies": {
     "angular-mocks": "^1.3.0"
   },
@@ -19,5 +19,23 @@
         "dist/js/bootstrap.js"
       ]
     }
-  }
+  },
+  "homepage": "https://github.com/kuldeepkeshwar/angular-form-validation",
+  "authors": [
+    "Kuldeep Keshwar <kuldeepkeshwar@gmail.com>"
+  ],
+  "description": "angular form validation",
+  "keywords": [
+    "angular",
+    "form",
+    "validation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }
