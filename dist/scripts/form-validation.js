@@ -81,28 +81,7 @@
 			}
 		}
 	}];
-  var _validate=function(_formCtrl,_formValidationCtrl,attr){
-    var keys=Object.keys(_formCtrl).filter(function(key){
-      return key.indexOf('$')!=0; //skiping internal properties
-    });
-
-    angular.forEach(keys,function(key){
-      var field=fetchFromObject(_formCtrl,key);
-      if(field && field.$validate){
-        field.$validate();
-      }
-    })
-    if(_formCtrl.$invalid){
-      _formCtrl.formValidations=_formValidationCtrl.getFormValidations(_formCtrl.$error,attr.multiple);
-      $timeout(function(){
-        scope.$apply();
-      })
-      return false;
-    }else{
-      _formCtrl.formValidations=undefined;
-      return true;
-    }
-  }
+  
 	var _formValidationDirective=['$log','$timeout','errorCode',function($log,$timeout,errorCode){
 		return {
 			restrict: 'A',
@@ -142,7 +121,26 @@
 				var _formCtrl,_formValidationCtrl;
 				_formCtrl=controllers[0];
 		        _formCtrl.$_validate=function(){
-		          _validate(_formCtrl,_formValidationCtrl,attr);
+		          var keys=Object.keys(_formCtrl).filter(function(key){
+				      return key.indexOf('$')!=0; //skiping internal properties
+				    });
+
+				    angular.forEach(keys,function(key){
+				      var field=fetchFromObject(_formCtrl,key);
+				      if(field && field.$validate){
+				        field.$validate();
+				      }
+				    })
+				    if(_formCtrl.$invalid){
+				      _formCtrl.formValidations=_formValidationCtrl.getFormValidations(_formCtrl.$error,attr.multiple);
+				      $timeout(function(){
+				        scope.$apply();
+				      })
+				      return false;
+				    }else{
+				      _formCtrl.formValidations=undefined;
+				      return true;
+				    }
 		        };
 				_formValidationCtrl=controllers[1];
 				element.on('submit',function(){
