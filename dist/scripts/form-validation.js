@@ -9,7 +9,20 @@
  * Main module of the application.
  */
 (function(){
-	var _errorCodeProvider=function() {
+  function fetchFromObject(obj, prop) {
+
+    if(typeof obj === 'undefined') {
+      return false;
+    }
+
+    var _index = prop.indexOf('.')
+    if(_index > -1) {
+      return fetchFromObject(obj[prop.substring(0, _index)], prop.substr(_index + 1));
+    }
+
+    return obj[prop];
+  }
+  var _errorCodeProvider=function() {
 	  var _url,_map;
 	  _map={};
 	  this.setErrorCodeUrl=function(url){
@@ -24,7 +37,7 @@
 		  var _service,def;
 		  def=$q.defer();
 		  _service={};
-		  
+
 		  if(_url){
 			  $http.get(_url).then(function (response) {
 				  init(response.data);
@@ -32,7 +45,7 @@
 			  },function(resp){
 				  def.reslove(_map);
 				  $log.error('error while loading error codes',resp);
-			  });  
+			  });
 		  }else{
 			  def.resolve(_map);
 		  }
@@ -68,6 +81,28 @@
 			}
 		}
 	}];
+  var _validate=function(_formCtrl,_formValidationCtrl,attr){
+    var keys=Object.keys(_formCtrl).filter(function(key){
+      return key.indexOf('$')!=0; //skiping internal properties
+    });
+
+    angular.forEach(keys,function(key){
+      var field=fetchFromObject(_formCtrl,key);
+      if(field && field.$validate){
+        field.$validate();
+      }
+    })
+    if(_formCtrl.$invalid){
+      _formCtrl.formValidations=_formValidationCtrl.getFormValidations(_formCtrl.$error,attr.multiple);
+      $timeout(function(){
+        scope.$apply();
+      })
+      return false;
+    }else{
+      _formCtrl.formValidations=undefined;
+      return true;
+    }
+  }
 	var _formValidationDirective=['$log','$timeout','errorCode',function($log,$timeout,errorCode){
 		return {
 			restrict: 'A',
@@ -97,7 +132,7 @@
 										 return formValidations;
 									 }
 								 }
-							} 
+							}
 						 }
 					}
 					return formValidations;
@@ -106,6 +141,9 @@
 			link:function(scope,element,attr,controllers){
 				var _formCtrl,_formValidationCtrl;
 				_formCtrl=controllers[0];
+		        _formCtrl.$_validate=function(){
+		          _validate(_formCtrl,_formValidationCtrl,attr);
+		        };
 				_formValidationCtrl=controllers[1];
 				element.on('submit',function(){
 					if(_formCtrl.$invalid){
