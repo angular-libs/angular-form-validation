@@ -1,5 +1,6 @@
 # angular-form-validation
 [![Build Status](https://travis-ci.org/kuldeepkeshwar/angular-form-validation.svg)](https://travis-ci.org/kuldeepkeshwar/angular-form-validation)
+[![Dependency Status](https://gemnasium.com/kuldeepkeshwar/angular-form-validation.svg)](https://gemnasium.com/kuldeepkeshwar/angular-form-validation)
 
 This plugin can be used to show validation message.
 
