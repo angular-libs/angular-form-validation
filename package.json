@@ -3,8 +3,10 @@
   "private": true,
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-angular-architecture-graph": "^0.2.6",
     "grunt-angular-templates": "^0.5.7",
     "grunt-autoprefixer": "^2.0.0",
+    "grunt-bump": "^0.6.0",
     "grunt-concurrent": "^1.0.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.0",
@@ -18,16 +20,30 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-filerev": "^2.1.2",
     "grunt-google-cdn": "^0.4.3",
+    "grunt-graphviz": "^0.1.1",
+    "grunt-istanbul-coverage": "^0.1.1",
+    "grunt-jsinspect": "^1.0.0",
+    "grunt-karma": "*",
     "grunt-newer": "^1.1.0",
     "grunt-ng-annotate": "^0.9.2",
     "grunt-svgmin": "^2.0.0",
     "grunt-usemin": "^3.0.0",
     "grunt-wiredep": "^2.0.0",
+    "jasmine-core": "^2.3.4",
     "jit-grunt": "^0.9.1",
     "jshint-stylish": "^1.0.0",
+    "karma": "^0.13.15",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "*",
+    "karma-phantomjs-launcher": "*",
+    "phantomjs": "^1.9.18",
     "time-grunt": "^1.0.0"
   },
   "engines": {
     "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "grunt default",
+    "ci": "npm test && codecov coverage/cobertura/cobertura-coverage.xml --token=1ea1a83a-73dd-44d4-bab9-d6a792be2168"
   }
 }

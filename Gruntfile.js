@@ -14,7 +14,10 @@ module.exports = function (grunt) {
 
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
+  grunt.loadNpmTasks('grunt-bump');
+  grunt.loadNpmTasks('grunt-jsinspect');
 
+  grunt.loadNpmTasks('grunt-istanbul-coverage');
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -26,7 +29,53 @@ module.exports = function (grunt) {
 
     // Project settings
     yeoman: appConfig,
-
+    coverage: {
+      default: {
+        options: {
+          thresholds: {
+            'statements': 90,
+            'branches': 90,
+            'lines': 90,
+            'functions': 90
+          },
+          dir: 'json',
+          root: 'coverage'
+        }
+      }
+    },
+    bump: {
+      options: {
+        files: ['bower.json'],
+        updateConfigs: [],
+        commit: true,
+        commitMessage: 'Release v%VERSION%',
+        commitFiles: ['-a'],
+        createTag: true,
+        tagName: 'v%VERSION%',
+        tagMessage: 'Version %VERSION%',
+        push: true,
+        pushTo: 'upstream',
+        gitDescribeOptions: '--tags --always --abbrev=1 --dirty=-d',
+        globalReplace: false,
+        prereleaseName: false,
+        regExp: false
+      }
+    },
+    jsinspect: {
+      inspect: {
+        options: {
+          threshold:   30,
+          diff:        true,
+          identifiers: false,
+          failOnMatch: true,
+          suppress:    100,
+          reporter:    'default'
+        },
+        src: [
+          '<%= yeoman.app %>/**/*.js'
+        ]
+      }
+    },
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -142,7 +191,8 @@ module.exports = function (grunt) {
           ]
         }]
       },
-      server: '.tmp'
+      server: '.tmp',
+      coverage:'coverage'
     },
 
     // Add vendor prefixed styles
@@ -199,7 +249,7 @@ module.exports = function (grunt) {
         }
       }
     },
- 
+
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
       html: ['<%= yeoman.dist %>/{,*/}*.html'],
@@ -208,7 +258,7 @@ module.exports = function (grunt) {
         assetsDirs: ['<%= yeoman.dist %>','<%= yeoman.dist %>/images']
       }
     },
- 
+
     // The following *-min tasks will produce minified files in the dist folder
     // By default, your `index.html`'s <!-- Usemin block --> will take care of
     // minification. These next options are pre-configured if you do not wish
@@ -236,7 +286,7 @@ module.exports = function (grunt) {
       options : {
         beautify : {
           ascii_only : true
-        }    
+        }
       }
     },
     imagemin: {
@@ -381,7 +431,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('test', [
-    'clean:server',
+    'clean:server','clean:coverage',
     'concurrent:test',
     'autoprefixer',
     'connect:test',
@@ -389,6 +439,8 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'newer:jshint',
+    'jsinspect','coverage',
     'clean:dist',
     'wiredep',
     'useminPrepare',
@@ -406,8 +458,10 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'newer:jshint',
     'test',
     'build'
+  ]);
+  grunt.registerTask('bump', [
+    'bump'
   ]);
 };
