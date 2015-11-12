@@ -1,6 +1,8 @@
 # angular-form-validation
 [![Build Status](https://travis-ci.org/kuldeepkeshwar/angular-form-validation.svg)](https://travis-ci.org/kuldeepkeshwar/angular-form-validation)
 [![Dependency Status](https://gemnasium.com/kuldeepkeshwar/angular-form-validation.svg)](https://gemnasium.com/kuldeepkeshwar/angular-form-validation)
+[![codecov.io](https://codecov.io/github/kuldeepkeshwar/angular-form-validation/coverage.svg?branch=master)](https://codecov.io/github/kuldeepkeshwar/angular-form-validation?branch=master)
+
 <a href="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation"><img src="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/badges/gpa.svg" /></a>
 <a href="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/coverage"><img src="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/badges/coverage.svg" /></a>
 [![Bower version](https://badge.fury.io/bo/simple-form-validation.svg)](https://badge.fury.io/bo/simple-form-validation)
