@@ -15,7 +15,7 @@
       return false;
     }
 
-    var _index = prop.indexOf('.')
+    var _index = prop.indexOf('.');
     if(_index > -1) {
       return fetchFromObject(obj[prop.substring(0, _index)], prop.substr(_index + 1));
     }
@@ -27,7 +27,7 @@
 	  _map={};
 	  this.setErrorCodeUrl=function(url){
 		  _url=url;
-	  }
+	  };
 	  function init(data){
 		  if(data){
 		  	_map=data;
@@ -58,8 +58,8 @@
 		  };
 		  return _service;
 	  }];
-	}
-	var _validationMessageDirective=['$log',function($log){
+	};
+	var _validationMessageDirective=[function(){
 		function _defaultMessage(){
 			return {
 				field:'',validation:'',code:'',message:''
@@ -79,33 +79,33 @@
 				_formValidationCtrl=controllers[0];
 				_formValidationCtrl.addValidationMessage(_validationMessage);
 			}
-		}
+		};
 	}];
-  
+
 	var _formValidationDirective=['$log','$timeout','errorCode',function($log,$timeout,errorCode){
 		return {
 			restrict: 'A',
 			require:['form','formValidation'],
-			controller:['$scope',function($scope){
+			controller:[function(){
 				var _form_name,_validationMessages;
 				_validationMessages=[];
 				this.setFormName=function(name){
 					_form_name=name;
-				}
+				};
 				this.addValidationMessage=function(msgObj){
 					errorCode.initMessage(msgObj);
 					_validationMessages.push(msgObj);
-				}
+				};
 				this.getValidationMessage=function(){
 					return _validationMessages;
-				}
+				};
 				this.getFormValidations=function(errors,multiple){
 					var formValidations=[];
 					for(var k=0;k<_validationMessages.length;k++){
 						 var validationName=_validationMessages[k].validation;
 						 if(errors[validationName]){
 							 for(var a=0;a<errors[validationName].length;a++){
-								 if(errors[validationName][a].$name==_validationMessages[k].field){
+								 if(errors[validationName][a].$name===_validationMessages[k].field){
 									 formValidations.push(_validationMessages[k].message);
 									 if(!multiple){
 										 return formValidations;
@@ -115,14 +115,14 @@
 						 }
 					}
 					return formValidations;
-				}
+				};
 			}],
 			link:function(scope,element,attr,controllers){
 				var _formCtrl,_formValidationCtrl;
 				_formCtrl=controllers[0];
 		        _formCtrl.$_validate=function(){
 		          var keys=Object.keys(_formCtrl).filter(function(key){
-				      return key.indexOf('$')!=0; //skiping internal properties
+				      return key.indexOf('$')!==0; //skiping internal properties
 				    });
 
 				    angular.forEach(keys,function(key){
@@ -130,12 +130,12 @@
 				      if(field && field.$validate){
 				        field.$validate();
 				      }
-				    })
+				    });
 				    if(_formCtrl.$invalid){
 				      _formCtrl.formValidations=_formValidationCtrl.getFormValidations(_formCtrl.$error,attr.multiple);
 				      $timeout(function(){
 				        scope.$apply();
-				      })
+				      });
 				      return false;
 				    }else{
 				      _formCtrl.formValidations=undefined;
@@ -148,7 +148,7 @@
 						_formCtrl.formValidations=_formValidationCtrl.getFormValidations(_formCtrl.$error,attr.multiple);
 						$timeout(function(){
 							scope.$apply();
-						})
+						});
 						return false;
 					}else{
 						_formCtrl.formValidations=undefined;
@@ -160,7 +160,7 @@
 				}
 				_formValidationCtrl.setFormName(_formCtrl.$name);
 			}
-		}
+		};
 	}];
 	var _formErrorDirective=['$log','$timeout',function($log,$timeout){
 		function templateFn(){
@@ -192,13 +192,13 @@
 				_serverElHidden=false;
 				scope.isHidden=function(){
 					return _show;
-				}
+				};
 				scope.hide=function(){
 					_show=false;
-				}
+				};
 				function hideServerError(){
 					if(attr.serverError && !_serverElHidden){
-						$('.'+attr.serverError).hide();
+						angular.element('.'+attr.serverError).hide();
 						_serverElHidden=true;
 					}
 				}
@@ -213,10 +213,10 @@
 						}else{
 							_show=false;
 						}
-					})
+					});
 				},1000);
 			}
-		}
+		};
 	}];
 	angular.module('formValidation',[]);
 	angular.module('formValidation').provider('errorCode',_errorCodeProvider);

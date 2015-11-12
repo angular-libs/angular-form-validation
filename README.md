@@ -1,8 +1,8 @@
 # angular-form-validation
 [![Build Status](https://travis-ci.org/kuldeepkeshwar/angular-form-validation.svg)](https://travis-ci.org/kuldeepkeshwar/angular-form-validation)
 [![Dependency Status](https://gemnasium.com/kuldeepkeshwar/angular-form-validation.svg)](https://gemnasium.com/kuldeepkeshwar/angular-form-validation)
-[![Code Climate](https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/badges/gpa.svg)](https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation)
-[![Test Coverage](https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/badges/coverage.svg)](https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/coverage)
+<a href="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation"><img src="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/badges/gpa.svg" /></a>
+<a href="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/coverage"><img src="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/badges/coverage.svg" /></a>
 [![Bower version](https://badge.fury.io/bo/simple-form-validation.svg)](https://badge.fury.io/bo/simple-form-validation)
 
 #####This plugin can be used to show validation message.
