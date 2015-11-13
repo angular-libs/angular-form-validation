@@ -29,3 +29,7 @@
 * `form-error` : This can be used to show validation message, act as a placeholder in DOM, can be placed inside form or outside form.
 
 ### For Docs & Example [Click me](http://kuldeepkeshwar.github.io/angular-form-validation)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kuldeepkeshwar/angular-form-validation/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
