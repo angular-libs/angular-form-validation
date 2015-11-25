@@ -6,7 +6,9 @@
 <a href="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation"><img src="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/badges/gpa.svg" /></a>
 <a href="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/coverage"><img src="https://codeclimate.com/github/kuldeepkeshwar/angular-form-validation/badges/coverage.svg" /></a>
 [![Bower version](https://badge.fury.io/bo/simple-form-validation.svg)](https://badge.fury.io/bo/simple-form-validation)
-
+[![Issue Stats](http://issuestats.com/github/kuldeepkeshwar/angular-form-validation/badge/pr)](http://issuestats.com/github/kuldeepkeshwar/angular-form-validation)
+[![Issue Stats](http://issuestats.com/github/kuldeepkeshwar/angular-form-validation/badge/issue)](http://issuestats.com/github/kuldeepkeshwar/angular-form-validation)
+![codecov.io](https://codecov.io/github/kuldeepkeshwar/angular-form-validation/branch.svg?branch=master)
 #####This plugin can be used to show validation message.
 
 
