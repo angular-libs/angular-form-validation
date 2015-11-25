@@ -30,3 +30,7 @@
 
 ### For Docs & Example [Click me](http://kuldeepkeshwar.github.io/angular-form-validation)
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/kuldeepkeshwar/angular-form-validation/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/angular-libs/angular-form-validation/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
