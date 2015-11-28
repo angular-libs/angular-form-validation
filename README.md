@@ -1,5 +1,5 @@
 # angular-form-validation
-[![Build Status](https://travis-ci.org/kuldeepkeshwar/angular-form-validation.svg)](https://travis-ci.org/kuldeepkeshwar/angular-form-validation)
+[![Build Status](https://travis-ci.org/angular-libs/angular-form-validation.svg?branch=master)](https://travis-ci.org/angular-libs/angular-form-validation)
 [![Dependency Status](https://gemnasium.com/kuldeepkeshwar/angular-form-validation.svg)](https://gemnasium.com/kuldeepkeshwar/angular-form-validation)
 [![codecov.io](https://codecov.io/github/kuldeepkeshwar/angular-form-validation/coverage.svg?branch=master)](https://codecov.io/github/kuldeepkeshwar/angular-form-validation?branch=master)
 
