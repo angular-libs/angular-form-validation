@@ -1,4 +1,5 @@
 # angular-form-validation
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![Build Status](https://travis-ci.org/angular-libs/angular-form-validation.svg?branch=master)](https://travis-ci.org/angular-libs/angular-form-validation)
 [![Dependency Status](https://gemnasium.com/angular-libs/angular-form-validation.svg)](https://gemnasium.com/angular-libs/angular-form-validation)
 [![codecov.io](https://codecov.io/github/angular-libs/angular-form-validation/coverage.svg?branch=master)](https://codecov.io/github/angular-libs/angular-form-validation?branch=master)
