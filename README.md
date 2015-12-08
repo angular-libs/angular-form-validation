@@ -5,7 +5,7 @@
 [![codecov.io](https://codecov.io/github/angular-libs/angular-form-validation/coverage.svg?branch=master)](https://codecov.io/github/angular-libs/angular-form-validation?branch=master)
 
 <a href="https://codeclimate.com/github/angular-libs/angular-form-validation"><img src="https://codeclimate.com/github/angular-libs/angular-form-validation/badges/gpa.svg" /></a>
-<a href="https://codeclimate.com/github/angular-libs/angular-form-validation/coverage"><img src="https://codeclimate.com/github/angular-libs/angular-form-validation/badges/coverage.svg" /></a>
+[![Coverage Status](https://coveralls.io/repos/angular-libs/angular-form-validation/badge.svg?branch=master&service=github)](https://coveralls.io/github/angular-libs/angular-form-validation?branch=master)
 [![Bower version](https://badge.fury.io/bo/simple-form-validation.svg)](https://badge.fury.io/bo/simple-form-validation)
 [![Issue Stats](http://issuestats.com/github/angular-libs/angular-form-validation/badge/pr)](http://issuestats.com/github/angular-libs/angular-form-validation)
 [![Issue Stats](http://issuestats.com/github/angular-libs/angular-form-validation/badge/issue)](http://issuestats.com/github/angular-libs/angular-form-validation)
