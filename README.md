@@ -10,6 +10,7 @@
 [![Issue Stats](http://issuestats.com/github/angular-libs/angular-form-validation/badge/pr)](http://issuestats.com/github/angular-libs/angular-form-validation)
 [![Issue Stats](http://issuestats.com/github/angular-libs/angular-form-validation/badge/issue)](http://issuestats.com/github/angular-libs/angular-form-validation)
 ![codecov.io](https://codecov.io/github/angular-libs/angular-form-validation/branch.svg?branch=master)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/23f9d0f9-ef29-4a12-84c0-154e335f827e/big.png)](https://insight.sensiolabs.com/projects/23f9d0f9-ef29-4a12-84c0-154e335f827e)
 #####This plugin can be used to show validation message.
 
 
