@@ -1,4 +1,6 @@
 # angular-form-validation
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/angular-libs/angular-form-validation.svg)](https://greenkeeper.io/)
 [![Built with Grunt](https://cdn.gruntjs.com/builtwith.png)](http://gruntjs.com/)
 [![Build Status](https://travis-ci.org/angular-libs/angular-form-validation.svg?branch=master)](https://travis-ci.org/angular-libs/angular-form-validation)
 [![Dependency Status](https://gemnasium.com/angular-libs/angular-form-validation.svg)](https://gemnasium.com/angular-libs/angular-form-validation)
